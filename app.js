@@ -1,13 +1,19 @@
-const http = require("http");
+const https = require("https");
+const fs = require("fs");
 
 const PORT = process.env.PORT || 3000;
+
+const options = {
+    key: fs.readFileSync("certs/server.key"),
+    cert: fs.readFileSync("certs/server.crt")
+};
 
 const users = [
     { id: 1, name: "Ahmed" },
     { id: 2, name: "Security Engineer" }
 ];
 
-const server = http.createServer((req, res) => {
+const server = https.createServer(options, (req, res) => {
 
     res.setHeader("Content-Type", "application/json");
 
