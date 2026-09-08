@@ -35,3 +35,4 @@ jobs:
 
       - name: Run Semgrep SAST
         run: semgrep --config=auto . --error
+        
