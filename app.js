@@ -2,12 +2,13 @@ const https = require("https");
 const fs = require("fs");
 
 const PORT = process.env.PORT || 3000;
-const testApiKey = "ghp_1234567890abcdefghijklmnopqrstuvwxyz";
-
 const options = {
     key: fs.readFileSync("certs/server.key"),
     cert: fs.readFileSync("certs/server.crt")
 };
+
+const testApiKey = "ghp_1234567890ABcdefghijklmnopqrstuvwxyz";
+
 
 const users = [
     { id: 1, name: "Ahmed" },
